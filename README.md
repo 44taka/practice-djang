@@ -8,4 +8,21 @@
 https://docs.docker.com/samples/django/
 https://www.djangoproject.com/download/
 
-django-admin startproject practice .
+https://di-acc2.com/programming/python/10325/
+
+## コマンド
+
+Djangoのプロジェクト作成
+
+```
+django-admin startproject [プロジェクト名] [作成ディレクトリパス]
+```
+
+Djangoのアプリケーション作成
+
+```
+cd [Djangoのプロジェクトルートディレクトリ]
+python manage.py startapp [アプリケーション名]
+```
+
+

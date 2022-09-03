@@ -5,6 +5,8 @@ services:
     image: postgres
     volumes:
       - ./data/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -12,7 +14,7 @@ services:
   web:
     build:
       context: ./docker
-    command: python manage.py runserver 0.0.0.0:8000
+#    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./web:/code
     ports:
