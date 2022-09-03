@@ -1,1 +1,1 @@
-# practice-djang
+# practice-django
