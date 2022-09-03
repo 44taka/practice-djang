@@ -26,3 +26,4 @@ python manage.py startapp [アプリケーション名]
 ```
 
 
+https://jnuank.hatenablog.com/entry/2020/12/16/235345

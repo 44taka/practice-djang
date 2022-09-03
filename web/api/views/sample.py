@@ -1,9 +1,10 @@
-from .models import SampleModel
 from rest_framework.generics import ListCreateAPIView
-from .serializers import SampleSerializer
+
+from api.models import SampleModel
+from api.serializers.sample import SampleSerializer
 
 
-class Api(ListCreateAPIView):
+class SampleView(ListCreateAPIView):
     # 対象とするモデルのオブジェクトを定義
     queryset = SampleModel.objects.all()
 

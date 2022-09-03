@@ -1,8 +1,9 @@
 from rest_framework import serializers
-from .models import SampleModel
+
+from api import models
 
 
 class SampleSerializer(serializers.ModelSerializer):
     class Meta:
-        model = SampleModel
+        model = models.SampleModel
         fields = ["id", "title", "description"]
