@@ -1,0 +1,10 @@
+from django.db import models
+
+
+class UserInfoModel(models.Model):
+    username = models.CharField(max_length=50, unique=True, db_index=True)
+    password = models.CharField(max_length=100, db_index=True)
+    info = models.CharField(max_length=200)
+
+    class Meta:
+        db_table = "user_info_tbl"
