@@ -1,7 +1,9 @@
 # Djnago
-Django==4.1
+Django==4.1.1
 psycopg2>=2.8
 # DRF
 djangorestframework==3.13.1
 markdown
 django-filter
+djoser
+djangorestframework-simplejwt
