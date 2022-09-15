@@ -1,10 +1,15 @@
 from django.urls import path
-from api.views.sample import SampleView
-from api.views.user_info import UserInfoView
-from api.views.user_info_detail import UserInfoDetailView
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [
-    path('api/', SampleView.as_view(), name="api"),
-    path('api/userinfo/', UserInfoView.as_view(), name="api/userinfo/"),
-    path('api/userinfo/<int:pk>', UserInfoDetailView.as_view(), name="api/userinfo/")
-]
+from api.views.sample import SampleView
+
+router = DefaultRouter()
+router.register('api', SampleView, basename='api')
+
+urlpatterns = router.urls
+
+# urlpatterns = [
+#     # path('api/', SampleView.as_view(), name="api"),
+#     # path('api/', SampleView.as_view({'get': 'list'}), name="api"),
+#     path('api/', SampleView.as_view({'get': 'list'}), name="api"),
+# ]
