@@ -35,7 +35,7 @@ class UserManager(BaseUserManager):
         return user
 
 
-class User(AbstractBaseUser):
+class UserModel(AbstractBaseUser):
     email = models.EmailField(
         verbose_name='Eメールアドレス',
         max_length=255,

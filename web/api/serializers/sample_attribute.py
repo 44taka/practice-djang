@@ -3,7 +3,7 @@ from rest_framework import serializers
 from api import models
 
 
-class UserAttributeSerializer(serializers.ModelSerializer):
+class SampleAttributeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.UserAttributeModel
+        model = models.SampleAttributeModel
         fields = '__all__'

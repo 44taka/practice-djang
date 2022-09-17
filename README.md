@@ -35,6 +35,7 @@ DBテーブル（モデル）の値を伝えるためのバリデーションチ
 
 https://www.django-rest-framework.org/api-guide/serializers/
 https://note.crohaco.net/2018/django-rest-framework-serializer/
+https://note.crohaco.net/2018/django-rest-framework-view/
 
 ## ネスト要素のあるレスポンス
 
