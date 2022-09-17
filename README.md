@@ -46,3 +46,16 @@ https://qiita.com/ping2shi2/items/805113d68860b540ad52
 
 https://daeudaeu.com/django-abstractuser/
 https://itc.tokyo/django/user/
+
+
+https://yamayou-1.hatenablog.com/entry/2022/03/06/172335
+https://qtatsu.hatenablog.com/entry/2020/06/15/122819
+https://qiita.com/okoppe8/items/c58bb3faaf26c9e2f27f
+https://itc.tokyo/django/restframework-viewset/
+
+https://qiita.com/KueharX/items/eef29ae0c5c238cbf61c
+https://nmomos.com/tips/2019/07/24/django-jwt-authentication/
+
+https://qiita.com/knaot0/items/8427918564400968bd2b
+https://www.kueharx.com/2021/05/djoserdjango-rest-framework.html
+https://zenn.dev/maru44/articles/8c22bbd6954ea6
