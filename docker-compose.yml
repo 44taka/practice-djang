@@ -3,6 +3,7 @@ version: "3.9"
 services:
   db:
     image: postgres
+    container_name: practice_django.db
     volumes:
       - ./data/db:/var/lib/postgresql/data
     ports:
@@ -14,6 +15,7 @@ services:
   web:
     build:
       context: ./docker
+    container_name: practice_django.web
 #    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./web:/code
@@ -26,3 +28,13 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
+
+  front:
+    build:
+      context: ./docker/front
+    container_name: practice_django.front
+    volumes:
+      - ./front:/app
+    ports:
+      - "3000:3000"
+    tty: true
