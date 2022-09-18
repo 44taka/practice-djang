@@ -59,3 +59,7 @@ https://nmomos.com/tips/2019/07/24/django-jwt-authentication/
 https://qiita.com/knaot0/items/8427918564400968bd2b
 https://www.kueharx.com/2021/05/djoserdjango-rest-framework.html
 https://zenn.dev/maru44/articles/8c22bbd6954ea6
+
+## エラーハンドリング
+
+https://qtatsu.hatenablog.com/entry/2020/06/15/122819

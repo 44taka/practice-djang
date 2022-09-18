@@ -5,13 +5,14 @@ from rest_framework.permissions import IsAuthenticated
 
 from api.models import SampleModel
 from api.serializers.sample import SampleSerializer
+from rest_framework.exceptions import NotFound, ValidationError
 
 
 class SampleView(ModelViewSet):
     # 許容するHTTPメソッドを指定
     http_method_names = ['get', 'post', 'put', 'delete']
     # 認証
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
     def list(self, request):
         """
@@ -30,7 +31,7 @@ class SampleView(ModelViewSet):
             serializer = SampleSerializer(sample)
             return Response(serializer.data)
         except SampleModel.DoesNotExist:
-            return Response([], status.HTTP_404_NOT_FOUND)
+            raise NotFound(detail=[])
 
     def create(self, request):
         """
@@ -40,7 +41,7 @@ class SampleView(ModelViewSet):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        raise ValidationError(detail=serializer.errors)
 
     def update(self, request, pk):
         """
@@ -52,7 +53,7 @@ class SampleView(ModelViewSet):
             if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data)
-            return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
+            raise ValidationError(detail=serializer.errors)
         except SampleModel.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
