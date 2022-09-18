@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'djoser',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -145,3 +147,7 @@ SIMPLE_JWT = {
 }
 
 AUTH_USER_MODEL = 'api.UserModel'
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+]
