@@ -29,6 +29,7 @@ docker-compose up -d
   - 全般
     - https://qiita.com/kimihiro_n/items/86e0a9e619720e57ecd8
     - https://qiita.com/okoppe8/items/c58bb3faaf26c9e2f27f
+    - https://di-acc2.com/programming/python/10325/
   - ビュー、シリアライザ周り
     - https://www.django-rest-framework.org/api-guide/serializers/
     - https://note.crohaco.net/2018/django-rest-framework-serializer/
@@ -49,9 +50,6 @@ docker-compose up -d
 - その他
   - JWT周り
     - https://qiita.com/knaot0/items/8427918564400968bd2b
-
-
-https://di-acc2.com/programming/python/10325/
 
 ## コマンドメモ（自分用）
 
