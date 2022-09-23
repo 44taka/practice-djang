@@ -2,6 +2,7 @@ from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.exceptions import NotFound, ValidationError
 
 from api.models import SampleModel
 from api.serializers.sample import SampleSerializer
@@ -30,7 +31,7 @@ class SampleView(ModelViewSet):
             serializer = SampleSerializer(sample)
             return Response(serializer.data)
         except SampleModel.DoesNotExist:
-            return Response([], status.HTTP_404_NOT_FOUND)
+            raise NotFound()
 
     def create(self, request):
         """
@@ -39,8 +40,8 @@ class SampleView(ModelViewSet):
         serializer = SampleSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(data=serializer.data, status=status.HTTP_201_CREATED)
+        raise ValidationError(detail=serializer.errors)
 
     def update(self, request, pk):
         """
@@ -52,7 +53,7 @@ class SampleView(ModelViewSet):
             if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data)
-            return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
+            raise ValidationError(detail=serializer.errors)
         except SampleModel.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
